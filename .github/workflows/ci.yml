@@ -1,0 +1,82 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  server:
+    name: Core API (typecheck + build)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: server/package-lock.json
+      - name: Install
+        working-directory: server
+        run: npm ci
+      - name: Typecheck
+        working-directory: server
+        run: npm run typecheck
+      - name: Build
+        working-directory: server
+        run: npm run build
+      - name: Smoke test (no AI key)
+        working-directory: server
+        run: |
+          node dist/index.js &
+          SERVER_PID=$!
+          sleep 2
+          curl -sf http://localhost:4000/api/health
+          echo
+          curl -sf http://localhost:4000/api/stats
+          echo
+          curl -sf "http://localhost:4000/api/routes?q=102&limit=3"
+          echo
+          kill $SERVER_PID
+
+  web:
+    name: Web app (next build)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - name: Install
+        working-directory: web
+        run: npm ci
+      - name: Build
+        working-directory: web
+        env:
+          NEXT_PUBLIC_API_BASE: http://localhost:4000
+        run: npm run build
+
+  android:
+    name: Android (assembleDebug)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+      - name: Build debug APK
+        working-directory: android
+        env:
+          API_BASE_URL: http://10.0.2.2:4000
+        run: ./gradlew :app:assembleDebug --stacktrace --no-daemon
+      - name: Upload APK (artifact)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: transitflow-debug-apk
+          path: android/app/build/outputs/apk/debug/*.apk
+          if-no-files-found: ignore
