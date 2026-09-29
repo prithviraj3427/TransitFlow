@@ -1,0 +1,17 @@
+{
+  "name": "TransitFlow — Ghost-Bus Radar",
+  "short_name": "TransitFlow",
+  "description": "See the real bus route before you board. Scan a bus, verify sticker vs LED, warn riders of mismatches.",
+  "id": "/?source=pwa",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#09090c",
+  "theme_color": "#4F46E5",
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

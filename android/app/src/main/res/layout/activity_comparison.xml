@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app_background_gradient"
+    tools:context=".ComparisonActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar_comp"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:gravity="bottom"
+            android:paddingBottom="8dp"
+            app:navigationIcon="?attr/homeAsUpIndicator"
+            app:navigationIconTint="@color/text_primary"
+            app:title="RAIL-GATHI vs Existing"
+            app:titleTextColor="@color/text_primary" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingTop="16dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CAPABILITY COMPARISON MATRIX (SIH SLIDE 6)"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"
+                android:letterSpacing="0.15"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Comparison Table Container -->
+            <FrameLayout
+                android:id="@+id/card_comparison_table"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/glass_background">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:stretchColumns="*"
+                    android:padding="20dp">
+
+                    <!-- Header Row -->
+                    <TableRow android:paddingBottom="12dp">
+                        <TextView
+                            android:text="Capability"
+                            android:textColor="@color/text_primary"
+                            android:textStyle="bold"
+                            android:textSize="13sp"/>
+                        <TextView
+                            android:text="RAIL-GATHI"
+                            android:textColor="@color/text_primary"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:textSize="13sp"/>
+                        <TextView
+                            android:text="Existing"
+                            android:textColor="@color/text_secondary"
+                            android:gravity="center"
+                            android:textSize="13sp"/>
+                    </TableRow>
+
+                    <!-- Divider -->
+                    <View android:layout_height="1dp" android:background="#20FFFFFF" android:layout_marginBottom="12dp"/>
+
+                    <!-- Row 1 -->
+                    <TableRow android:paddingVertical="8dp">
+                        <TextView android:text="Real-time Tracking" android:textColor="@color/text_primary" android:textSize="12sp"/>
+                        <TextView android:text="✅" android:gravity="center"/>
+                        <TextView android:text="✅" android:gravity="center"/>
+                    </TableRow>
+
+                    <!-- Row 2 -->
+                    <TableRow android:paddingVertical="8dp">
+                        <TextView android:text="ETA / ETD info" android:textColor="@color/text_primary" android:textSize="12sp"/>
+                        <TextView android:text="✅" android:gravity="center"/>
+                        <TextView android:text="✅" android:gravity="center"/>
+                    </TableRow>
+
+                    <!-- Row 3 -->
+                    <TableRow android:paddingVertical="8dp">
+                        <TextView android:text="Multi-factor ETA" android:textColor="@color/text_primary" android:textSize="12sp"/>
+                        <TextView android:text="✅" android:gravity="center"/>
+                        <TextView android:text="❌" android:gravity="center"/>
+                    </TableRow>
+
+                    <!-- Row 4 -->
+                    <TableRow android:paddingVertical="8dp">
+                        <TextView android:text="Weather &amp; Congestion" android:textColor="@color/text_primary" android:textSize="12sp"/>
+                        <TextView android:text="✅" android:gravity="center"/>
+                        <TextView android:text="❌" android:gravity="center"/>
+                    </TableRow>
+
+                    <!-- Row 5 -->
+                    <TableRow android:paddingVertical="8dp">
+                        <TextView android:text="Delay Propagation" android:textColor="@color/text_primary" android:textSize="12sp"/>
+                        <TextView android:text="✅" android:gravity="center"/>
+                        <TextView android:text="❌" android:gravity="center"/>
+                    </TableRow>
+
+                    <!-- Row 6 -->
+                    <TableRow android:paddingVertical="8dp">
+                        <TextView android:text="Platform Conflict Alerts" android:textColor="@color/text_primary" android:textSize="12sp"/>
+                        <TextView android:text="✅" android:gravity="center"/>
+                        <TextView android:text="❌" android:gravity="center"/>
+                    </TableRow>
+
+                </TableLayout>
+            </FrameLayout>
+
+            <!-- Research & References Section (Slide 6) -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GOVERNMENT &amp; INSTITUTIONAL SOURCES"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"
+                android:letterSpacing="0.15"
+                android:textStyle="bold"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="12dp"/>
+
+            <FrameLayout
+                android:id="@+id/card_research_links"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/glass_background">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="• CRIS Railways: https://www.cris.org.in/"
+                        android:textColor="@color/text_primary"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="• Open Datasets: https://www.data.gov.in/"
+                        android:textColor="@color/text_primary"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="• NTES Feed: https://cris.org.in/loadpage?page=proNTES"
+                        android:textColor="@color/text_primary"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="• Web Prototype: https://rail-gathi.vercel.app"
+                        android:textColor="@color/text_primary"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="&quot;A railway that tells you the truth about when you'll arrive - not just the math.&quot;"
+                android:textColor="@color/text_primary"
+                android:textStyle="bold|italic"
+                android:gravity="center"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
