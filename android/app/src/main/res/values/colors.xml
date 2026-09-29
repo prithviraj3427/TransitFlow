@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Metallic Silver Glassmorphism Palette (From Reference Image) -->
+    <color name="bg_gradient_start">#7C8490</color>
+    <color name="bg_gradient_center">#9FA7B3</color>
+    <color name="bg_gradient_end">#C0C7D1</color>
+
+    <color name="glass_fill">#3DFFFFFF</color>
+    <color name="glass_fill_pressed">#5EFFFFFF</color>
+    <color name="glass_highlight_top">#CCFFFFFF</color>
+    <color name="glass_stroke_bottom">#20000000</color>
+    <color name="glass_shadow_soft">#30384250</color>
+
+    <!-- Compatibility Theme Colors -->
+    <color name="normal_bg">#F0F3F7</color>
+    <color name="normal_card">#FFFFFF</color>
+    <color name="normal_border">#D0D5DD</color>
+    <color name="dark_bg">#181D24</color>
+    <color name="hologram_cyan">#20FFFFFF</color>
+    <color name="hologram_magenta">#20E8EEF5</color>
+    <color name="hologram_gold">#20FFFFFF</color>
+
+    <!-- Dark Crisp Text -->
+    <color name="text_primary">#0E1318</color>
+    <color name="text_secondary">#3A424C</color>
+    <color name="glow_primary">#0E1318</color>
+    <color name="glow_secondary">#2A323D</color>
+</resources>

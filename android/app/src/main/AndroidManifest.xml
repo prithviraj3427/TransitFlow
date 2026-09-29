@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Train">
+
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Train"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Train" />
+
+        <activity
+            android:name=".PassengerActivity"
+            android:exported="false"
+            android:label="Passenger Dashboard"
+            android:theme="@style/Theme.Train" />
+
+        <activity
+            android:name=".TrackingDetailActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Train" />
+
+        <activity
+            android:name=".PropagationActivity"
+            android:exported="false"
+            android:label="Delay Propagation Forecast"
+            android:theme="@style/Theme.Train" />
+
+        <activity
+            android:name=".TicketDetailActivity"
+            android:exported="false"
+            android:label="Neural-Pass Ticket"
+            android:theme="@style/Theme.Train" />
+
+        <activity
+            android:name=".FoodPantryActivity"
+            android:exported="false"
+            android:label="Hydro-Pantry Dining"
+            android:theme="@style/Theme.Train" />
+
+        <activity
+            android:name=".StationMasterActivity"
+            android:exported="false"
+            android:label="Station Master Control Room"
+            android:theme="@style/Theme.Train" />
+
+        <activity
+            android:name=".ComparisonActivity"
+            android:exported="false"
+            android:label="RAIL-GATHI System Comparison"
+            android:theme="@style/Theme.Train" />
+    </application>
+
+</manifest>

@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── TransitFlow design tokens ─────────────────────────────────────────
+   Light theme = "day at the bus stand", Dark = "night scan".
+   Tokens are consumed by Tailwind (see tailwind.config.ts).            */
+:root {
+  --bg: #f5f6fa;
+  --surface: #ffffff;
+  --surface-2: #eceef5;
+  --ink: #14162b;
+  --muted: #676d84;
+  --line: #e4e7f0;
+
+  --brand: #4f46e5;
+  --brand-soft: #eef0fe;
+  --brand-ink: #3730a3;
+
+  --good: #0e9f6e;
+  --good-soft: #e6f7f0;
+  --good-ink: #0b7a55;
+
+  --bad: #e11d48;
+  --bad-soft: #fdeef2;
+  --bad-ink: #be123c;
+
+  --warn: #d97706;
+  --warn-soft: #fdf1df;
+  --warn-ink: #b45309;
+
+  --ring: rgba(79, 70, 229, 0.35);
+}
+
+.dark {
+  --bg: #09090c;
+  --surface: #131318;
+  --surface-2: #1c1c24;
+  --ink: #f2f3f8;
+  --muted: #9298ad;
+  --line: #262631;
+
+  --brand: #818cf8;
+  --brand-soft: #1e1e3a;
+  --brand-ink: #a5b4fc;
+
+  --good: #34d399;
+  --good-soft: #10241d;
+  --good-ink: #6ee7b7;
+
+  --bad: #fb7185;
+  --bad-soft: #2a121a;
+  --bad-ink: #fda4af;
+
+  --warn: #fbbf24;
+  --warn-soft: #291d0b;
+  --warn-ink: #fcd34d;
+
+  --ring: rgba(129, 140, 248, 0.4);
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+    scrollbar-width: thin;
+    scrollbar-color: var(--line) transparent;
+  }
+
+  body {
+    @apply bg-bg text-ink antialiased;
+    font-feature-settings: "cv11", "ss01";
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--brand);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+
+  input,
+  button,
+  textarea {
+    font: inherit;
+  }
+}
+
+@layer utilities {
+  .safe-bottom {
+    padding-bottom: max(env(safe-area-inset-bottom), 0px);
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

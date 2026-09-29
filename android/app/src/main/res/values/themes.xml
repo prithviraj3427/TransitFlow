@@ -1,0 +1,19 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Liquid Glass Theme (Modern) -->
+    <style name="Theme.Train.Glass" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/white</item>
+        <item name="android:windowBackground">@drawable/app_background_gradient</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+    </style>
+
+    <!-- Normal Theme (Fallback for older devices) -->
+    <style name="Theme.Train.Normal" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/bg_gradient_center</item>
+        <item name="android:windowBackground">@color/normal_bg</item>
+        <item name="android:textColorPrimary">@color/black</item>
+    </style>
+
+    <!-- Default Theme points to Normal for safety, overridden in Activity -->
+    <style name="Theme.Train" parent="Theme.Train.Normal" />
+</resources>
