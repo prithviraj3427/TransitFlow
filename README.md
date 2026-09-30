@@ -465,14 +465,6 @@ These are deployment targets rather than a claim that production infrastructure 
 
 ---
 
-## 🤝 Contributing
-
-Please read [`docs/CONTRIBUTING.md`](docs/CONTRIBUTING.md) for contribution rules, architecture boundaries, API ownership and the branch workflow.
-
-Before opening a Pull Request, run the relevant typecheck and build commands locally and make sure CI can validate the changes.
-
----
-
 ## 📄 License
 
 TransitFlow is distributed under the **MIT License**.
